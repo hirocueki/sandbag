@@ -32,7 +32,8 @@ def rand_user (first_id, last_id)
 end
 
 # 1blog , 10posts, 5comments
-blog = Blog.create!(name:"hoge hoge blog", user: rand_user(user_first_id, user_last_id) )
+author = rand_user(user_first_id, user_last_id)
+blog = Blog.create!(name: author.name + " Blog", user: author )
 10.times do
   post = blog.posts.create!(
     title: Faker::Lorem.word, 
