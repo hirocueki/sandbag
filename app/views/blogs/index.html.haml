@@ -1,2 +1,5 @@
 %h1 Blogs#index
-%p Find me in app/views/blogs/index.html.erb
+%ul.blogs
+  - @blogs.each do |blog|
+    %li= link_to "#{blog.name} (#{blog.posts.count})", blog_path(blog)
+
