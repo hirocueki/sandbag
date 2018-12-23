@@ -1,6 +1,8 @@
 %ul.comments
   - post.comments.each do |comment|
     %li
+      .comment-form{ id: "like-comment-form-#{comment.id}"}
+        = render 'comments/likes/like', comment: comment
       .author=comment.user.name
       .content=comment.body
       %hr

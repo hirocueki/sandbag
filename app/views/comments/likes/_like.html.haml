@@ -1,0 +1,8 @@
+- if like = comment.like_user(1)
+  = button_to blog_post_comment_like_path(comment.post.blog, comment.post, comment, like), class: "btn btn-danger", method: :delete, id: "like-button", remote: true do
+    いいね解除
+    %span.badge.badge-danger
+- else
+  = button_to blog_post_comment_likes_path(comment.post.blog, comment.post, comment, like), class: "btn btn-success", id: "like-button", remote: true do
+    いいね
+    %span.badge.badge-light
