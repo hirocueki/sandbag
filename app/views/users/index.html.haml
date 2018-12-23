@@ -1,0 +1,7 @@
+%h1 Users#index
+
+%ol.users
+  - @users.each do |user|
+    %li= link_to user.name, user_path(user)
+
+= link_to "Back", root_path
