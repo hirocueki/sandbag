@@ -1,6 +1,8 @@
 %h1= @post.title
 %p= @post.content
 
+#like-buttons-form
+  = render 'posts/likes/like', post: @post
 %p= render 'comments/list', post: @post
 
 =link_to "Back", blog_path(@post.blog)
